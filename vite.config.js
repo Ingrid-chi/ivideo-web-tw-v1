@@ -4,5 +4,6 @@ import svgr from 'vite-plugin-svgr';
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/ivideo-web-tw-v1/',
   plugins: [react(), svgr()],
 });
