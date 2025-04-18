@@ -1,0 +1,174 @@
+@import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
+
+.footerWrapper {
+  background-color: $PRIMARY_DEFAULT;
+  padding: 40px 40px;
+
+  @media (max-width: 768px) {
+    padding: 24px;
+  }
+
+  @media (max-width: 375px) {
+    padding: 20px;
+  }
+
+  .footerContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 40px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  .footerColumn {
+    flex: 0 1 auto; // 不強制撐開、不限制寬度
+
+    @media (max-width: 768px) {
+      border-bottom: 1px solid $TRANSPARENT_WHITE_20;
+      padding: 14px 18px;
+    }
+
+    @media (max-width: 375px) {
+      padding: 12px 16px;
+    }
+
+    &.payment {
+      max-width: 240px;
+    }
+
+    .footerTitle {
+      @extend title;
+      color: $BLACK_100;
+
+      @media (max-width: 375px) {
+        @include set-font(subtitle, loose, bold);
+      }
+    }
+
+    .footerToggle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .arrowIcon {
+      display: none;
+
+      @media (max-width: 768px) {
+        display: inline-block;
+        transition: transform 0.3s ease;
+        color: $BLACK_100;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .arrowOpen {
+        transform: rotate(180deg);
+      }
+    }
+
+    .footerContent {
+      @media (max-width: 768px) {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+
+        &.active {
+          max-height: 1000px; // 設一個安全上限夠放下內容就好
+        }
+      }
+    }
+
+    .footerService {
+      margin-bottom: 24px;
+    }
+
+    .footerServiceTitle {
+      @extend title;
+      color: $BLACK_100;
+      margin-bottom: 12px;
+
+      @media (max-width: 375px) {
+        @include set-font(subtitle, loose, bold);
+      }
+    }
+
+    .footerImgWrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+
+      @media (max-width: 768px) {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+    }
+
+    .footerImg {
+      width: 72px;
+      background: $TRANSPARENT_WHITE_20;
+      border-radius: 8px;
+    }
+
+    .footerItem {
+      margin-bottom: 16px;
+
+      .footerLink {
+        @extend .body1;
+        color: $BLACK_200;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+          color: $WHITE;
+        }
+      }
+
+      .footerSubtext {
+        @extend .body1;
+        color: $BLACK_200;
+
+        @media (max-width: 375px) {
+          @include set-font(body2, loose, regular);
+        }
+
+        .subtitle {
+          @extend .body1;
+          color: $BLACK_200;
+
+          @media (max-width: 375px) {
+            @include set-font(body2, loose, regular);
+          }
+        }
+      }
+    }
+  }
+
+  .footerDisabled {
+    color: $PRIMARY_DEEPER;
+    cursor: not-allowed;
+  }
+
+  .footerBottom {
+    margin-top: 80px;
+
+    @media (max-width: 768px) {
+      margin-top: 0;
+    }
+  }
+}

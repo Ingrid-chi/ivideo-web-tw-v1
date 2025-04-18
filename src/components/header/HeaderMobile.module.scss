@@ -1,0 +1,187 @@
+@import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
+
+.navMobile {
+  width: 100%;
+  background-color: $TRANSPARENT_WHITE_80;
+  box-shadow: 0px 2px 4px $TRANSPARENT_BLACK_10;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    padding: 16px 24px;
+
+    @media (max-width: 375px) {
+      padding: 16px 20px;
+    }
+  }
+
+  .logo svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .navActions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .hamburgerWrapper {
+      cursor: pointer;
+    }
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: $TRANSPARENT_BLACK_40;
+    z-index: 200;
+  }
+
+  .mobileMenu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%; // 調整寬度，留出右側空間
+    height: 100vh;
+    background-color: $WHITE;
+    transition: right 0.3s ease-in-out;
+    z-index: 300;
+    overflow-y: auto; // 確保背景資料可以上下滾動
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+
+    &.active {
+      right: 0;
+    }
+
+    @media (min-width: 768px) {
+      width: 50%;
+    }
+
+    @media (max-width: 375px) {
+      width: 70%;
+    }
+
+    .mobileMenuHeader {
+      display: flex;
+      justify-content: flex-end;
+      padding: 24px;
+
+      @media (max-width: 375px) {
+        padding: 20px;
+      }
+    }
+
+    .menuList {
+      @extend title;
+      color: $BLACK_800;
+      list-style: none;
+      padding: 0 24px;
+      margin: 0;
+
+      @media (max-width: 375px) {
+        @include set-font(subtitle, loose, bold);
+      }
+
+      .menuItem {
+        .menuItemTitle {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 16px 0;
+          cursor: pointer;
+
+          &.active {
+            color: $PRIMARY_DEFAULT;
+          }
+
+          .expandIcon {
+            transition: transform 0.3s ease;
+            transform: rotate(0deg);
+
+            &.active {
+              transform: rotate(180deg);
+            }
+
+            .arrowIcon path {
+              transition: transform 0.2s ease-in-out;
+              transform-origin: center;
+            }
+          }
+
+          &:hover {
+            color: $PRIMARY_DEFAULT;
+
+            .expandIcon .arrowIcon path {
+              fill: $PRIMARY_DEFAULT;
+            }
+          }
+
+          &.active {
+            .arrowIcon path {
+              fill: $PRIMARY_DEFAULT;
+            }
+          }
+        }
+
+        .subMenu {
+          @extend .body1;
+          color: $BLACK_800;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease-out;
+          padding-left: 20px;
+          list-style: none;
+
+          @media (max-width: 375px) {
+            @include set-font(body2, loose, regular);
+          }
+
+          &.active {
+            max-height: 100vh;
+          }
+
+          .subMenuItem {
+            padding: 12px 0;
+
+            a {
+              color: $BLACK_600;
+              text-decoration: none;
+            }
+
+            &:hover {
+              @extend title;
+              color: $PRIMARY_DEFAULT;
+            }
+          }
+        }
+      }
+    }
+
+    .socialMedia {
+      padding: 0 24px;
+      @media (max-width: 375px) {
+        padding: 20px;
+      }
+    }
+
+    .buttonWrapper {
+      position: absolute; // 讓 button 位置可以自動調整
+      bottom: 24px;
+      left: 24px;
+      right: 24px;
+      display: flex;
+      justify-content: center;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}

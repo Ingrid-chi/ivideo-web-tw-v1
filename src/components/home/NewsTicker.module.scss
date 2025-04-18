@@ -1,0 +1,53 @@
+@import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
+
+.newsTicker {
+  position: relative;
+  width: 100%;
+  height: 36px;
+  margin: 0 auto;
+  background-color: $PRIMARY_DEFAULT;
+  color: $WHITE;
+  overflow: hidden;
+  @extend .caption2;
+}
+
+.tickerWrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  bottom: 0;
+  will-change: transform;
+  transition: transform 1s ease-out;
+}
+
+.tickerContent {
+  width: 100%;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 4px 0;
+}
+
+.tickerItem {
+  width: 100%;
+  max-width: 1280px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 40px;
+
+  @media (max-width: 768px) {
+    padding: 0 24px;
+  }
+
+  @media (max-width: 375px) {
+    padding: 0 20px;
+  }
+}

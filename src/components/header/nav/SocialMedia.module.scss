@@ -1,0 +1,44 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/fonts.scss';
+
+.socialMedia {
+  position: relative;
+  margin-left: auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(24px, 30px));
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+}
+
+.languageDropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: $TRANSPARENT_WHITE_95;
+  box-shadow: $SHADOW_DROPDOWN;
+  border-radius: 8px;
+  padding: 12px;
+  list-style: none;
+  z-index: 1;
+
+  li {
+    a {
+      @extend .body1;
+      display: block;
+      padding: 4px 4px;
+      color: $BLACK_800;
+      text-decoration: none;
+
+      &:hover {
+        @extend title;
+        color: $PRIMARY_DEFAULT;
+      }
+    }
+  }
+}
+
+.languageIcon {
+  width: 30px;
+  height: 30px;
+}

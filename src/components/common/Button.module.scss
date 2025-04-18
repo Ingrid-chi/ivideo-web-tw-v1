@@ -1,0 +1,60 @@
+@import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
+
+.button {
+  @include set-font(title, loose, bold);
+  // padding: 12px 24px;
+  border-radius: 50px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.buttonLarge {
+  padding: 12px 24px;
+}
+
+.buttonMedium {
+  padding: 10px 20px;
+}
+
+.buttonSmall {
+  padding: 8px 16px;
+}
+
+// 主要顏色按鈕樣式
+.primarySecondary {
+  background-color: $SECONDARY_DEFAULT;
+  color: $WHITE;
+
+  &:hover {
+    background-color: $SECONDARY_DEEP;
+  }
+}
+
+.primarySecondaryDisabled {
+  background-color: $BLACK_200;
+  color: $WHITE;
+  cursor: not-allowed;
+}
+
+// 次要顏色按鈕樣式
+.secondarySecondary {
+  background-color: $WHITE;
+  color: $SECONDARY_DEFAULT;
+  border: 1px solid $SECONDARY_DEFAULT;
+
+  &:hover {
+    background-color: $SECONDARY_TINT;
+  }
+}
+
+.secondarySecondaryDisabled {
+  background-color: $WHITE;
+  color: $BLACK_200;
+  border: 1px solid $BLACK_200;
+  cursor: not-allowed;
+}

@@ -1,0 +1,78 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/fonts.scss';
+
+.navIcons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  .searchButton {
+    background: none;
+    border: none;
+  }
+
+  .searchBox {
+    width: 30vw;
+    padding: 16px;
+    box-shadow: $SHADOW_DROPDOWN;
+    border-radius: 16px;
+    background-color: $TRANSPARENT_WHITE_95;
+    z-index: 1;
+
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+
+    // 搜尋框定位
+    position: absolute;
+    top: 64px;
+    right: 40px;
+
+    &.searchBoxOpen {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media screen and (max-width: 768px) {
+      position: absolute;
+      right: 0;
+      top: 78px;
+      width: 100%;
+    }
+
+    .searchInputWrapper {
+      display: flex;
+      align-items: center;
+      border: 1px solid $BLACK_100;
+      border-radius: 16px;
+      padding: 16px 20px;
+      background: $WHITE;
+
+      &:hover {
+        border: 1px solid $PRIMARY_DEFAULT;
+        transition: color 0.1s ease;
+      }
+
+      /* 當搜尋框 focus 時，父容器的邊框加粗 */
+      &:focus-within {
+        border: 2px solid $PRIMARY_DEFAULT;
+        transition: all 0.1s ease;
+      }
+
+      .searchInput {
+        @extend .body1;
+        width: 100%;
+        color: $BLACK_800;
+        border: none;
+        padding-left: 8px;
+        display: flex;
+        justify-content: space-between;
+
+        &:focus {
+          border: none;
+          outline: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
+
+.buttonClose {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  transition: background-color 0.1s ease-in-out;
+
+  .closeIcon {
+    color: $BLACK_800;
+    transition: color 0.1s ease-in-out;
+  }
+
+  &:hover {
+    background-color: $PRIMARY_DEFAULT;
+
+    .closeIcon {
+      color: $WHITE;
+    }
+  }
+}
+
+// icon size variants
+.s {
+  width: 16px;
+  height: 16px;
+}
+
+.m {
+  width: 24px;
+  height: 24px;
+}
+
+.l {
+  width: 32px;
+  height: 32px;
+}

@@ -1,0 +1,189 @@
+@import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
+
+.bannerWrapper {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.bannerBackground {
+  width: 100%;
+  background-color: $BG_SECONDARY_LIGHT;
+
+  &:hover .arrowLeftContent,
+  &:hover .arrowRightContent {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .bannerOuter {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+
+    // 擴大 hover 區域
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: transparent;
+      max-width: 100%;
+      pointer-events: auto;
+    }
+
+    @media (max-width: 768px) {
+      padding: 0;
+    }
+  }
+}
+
+.bannerCarousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.bannerContent {
+  width: 100%;
+  overflow: hidden;
+  touch-action: pan-y;
+  border-radius: 16px;
+
+  @media (max-width: 768px) {
+    border-radius: 0;
+  }
+}
+
+.bannerTrack {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: fit-content;
+}
+
+.bannerItem {
+  width: 100%;
+  max-width: 1200px;
+  aspect-ratio: 1200 / 628;
+  margin: 0 auto;
+  flex-shrink: 0;
+  position: relative;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  touch-action: pan-y;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: none;
+    border-radius: 0;
+  }
+
+  .bannerImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: inherit;
+    max-width: none !important;
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 0 solid $PRIMARY_DEFAULT;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  &:hover::after {
+    border-width: 4px;
+  }
+
+  &:active::after {
+    border-width: 6px;
+  }
+}
+
+// arrow 預設隱藏，在 hover 時出現
+.arrowLeftContent,
+.arrowRightContent {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+
+  @media (max-width: 768px) {
+    // 手機不顯示箭頭
+    display: none;
+  }
+}
+
+.arrowLeftContent {
+  left: -40px;
+
+  @media (max-width: 1280px) {
+    left: 0;
+  }
+}
+
+.arrowRightContent {
+  right: -40px;
+
+  @media (max-width: 1280px) {
+    right: 0;
+  }
+}
+
+.paginationDots {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 16px 0;
+}
+
+.dotWrapper {
+  width: 16px;
+  height: 16px;
+  margin: 0 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: $BLACK_200;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+
+  &:hover {
+    background-color: $PRIMARY_DEFAULT;
+  }
+
+  &:active {
+    transform: scale(1.4);
+  }
+}
+
+.activeDot {
+  background-color: $PRIMARY_DEFAULT;
+}

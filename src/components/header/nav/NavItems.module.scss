@@ -1,0 +1,93 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/fonts.scss';
+
+.navItems {
+  display: flex;
+  @extend title;
+  color: $BLACK_800;
+  z-index: 1;
+}
+
+.menu {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menuItem {
+  position: relative;
+  cursor: pointer;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    color: $PRIMARY_DEFAULT;
+
+    .arrowIcon {
+      transform: rotate(180deg);
+      fill: $PRIMARY_DEFAULT;
+    }
+
+    .subMenu {
+      display: flex;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+}
+
+.menuTitle {
+  display: flex;
+  align-items: center;
+}
+
+.arrowWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 4px;
+}
+
+.arrowIcon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.2s ease-in-out, fill 0.2s ease-in-out;
+  transform-origin: center;
+  fill: $BLACK_600;
+}
+
+.subMenu {
+  max-width: 30vw;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: $TRANSPARENT_WHITE_95;
+  box-shadow: $SHADOW_DROPDOWN;
+  border-radius: 8px;
+  padding: 16px;
+  flex-direction: column;
+  gap: 8px;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.subItem {
+  @extend .body1;
+  color: $BLACK_800;
+  list-style: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &:hover {
+    color: $PRIMARY_DEFAULT;
+    @extend title;
+  }
+}

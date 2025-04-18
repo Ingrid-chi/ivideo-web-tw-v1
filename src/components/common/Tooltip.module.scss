@@ -1,0 +1,42 @@
+@import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
+
+.tooltipContainer {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 70%;
+  background-color: $PRIMARY_TINT;
+
+  @extend .caption2;
+  color: $WHITE;
+  padding: 4px 8px;
+  border-radius: 8px;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+
+  white-space: normal;
+  max-width: 280px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  /* 標準化的 line-clamp 兼容性 */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+}
+
+.tooltipContainer:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}

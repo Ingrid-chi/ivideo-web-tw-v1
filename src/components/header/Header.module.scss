@@ -1,0 +1,18 @@
+@import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
+
+.headerWebWrapper {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  background-color: transparent;
+
+  .headerMobileWrapper {
+    display: none;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+}

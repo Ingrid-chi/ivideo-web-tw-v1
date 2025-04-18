@@ -1,0 +1,33 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/fonts.scss';
+
+// 首頁寬度錯誤，因為這裡是父層，子層的 WhyChoosePanel 有 margin 而父層沒有
+// 所以父層會被子層的 margin 推擠導致寬度不正確
+.whyChooseSection {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.whyChooseTitle {
+  @extend h4;
+  color: $BLACK_800;
+
+  width: 100%;
+  padding: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    @include set-font(h5, normal, bold);
+    padding: 24px;
+  }
+
+  @media (max-width: 375px) {
+    @include set-font(h6, normal, bold);
+    padding: 20px;
+  }
+}

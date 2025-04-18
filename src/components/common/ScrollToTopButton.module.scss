@@ -1,0 +1,17 @@
+.scrollToTopBtn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 50;
+
+  // 控制 SVG 尺寸（搭配 iconSize="lg" 的 class）
+  .arrowIcon--lg {
+    width: 32px;
+    height: 32px;
+
+    @media (max-width: 768px) {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

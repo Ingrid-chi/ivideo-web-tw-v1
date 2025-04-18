@@ -1,0 +1,133 @@
+@import './colors.scss';
+
+// 字體
+$font-primary: 'Noto Sans', sans-serif;
+
+// 字體大小
+$font-sizes: (
+  h1: 40px,
+  h2: 32px,
+  h3: 28px,
+  h4: 24px,
+  h5: 20px,
+  h6: 18px,
+  title: 16px,
+  subtitle: 14px,
+  body1: 16px,
+  body2: 14px,
+  caption1: 12px,
+  caption2: 12px,
+  small1: 11px,
+  small2: 11px,
+  tiny1: 10px,
+  tiny2: 10px,
+);
+
+// 行高
+$line-height: (
+  tight: 1.25,
+  normal: 1.4,
+  loose: 1.6,
+);
+
+// 字重
+$font-weight: (
+  light: 300,
+  regular: 400,
+  bold: 700,
+);
+
+// 全域樣式
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+title,
+p,
+.subtitle,
+.body1,
+.body2,
+.caption1,
+.caption2,
+.small1,
+.small2,
+.tiny1,
+.tiny2 {
+  font-family: $font-primary;
+}
+
+// 組合設定 Mixin
+@mixin set-font($size-key, $line-height-key, $weight-key) {
+  font-size: map-get($font-sizes, $size-key); // 根據傳入的 size 取得字體大小
+  line-height: map-get(
+    $line-height,
+    $line-height-key
+  ); // 根據傳入的行高比例取得行高
+  font-weight: map-get($font-weight, $weight-key); // 根據傳入的字重取得字重
+}
+
+h1 {
+  @include set-font(h1, tight, bold);
+}
+
+h2 {
+  @include set-font(h2, tight, bold);
+}
+
+h3 {
+  @include set-font(h3, tight, bold);
+}
+
+h4 {
+  @include set-font(h4, normal, bold);
+}
+
+h5 {
+  @include set-font(h5, normal, bold);
+}
+
+h6 {
+  @include set-font(h6, normal, bold);
+}
+
+title {
+  @include set-font(title, loose, bold);
+}
+
+.subtitle {
+  @include set-font(subtitle, loose, bold);
+}
+
+.body1 {
+  @include set-font(body1, loose, regular);
+}
+
+.body2 {
+  @include set-font(body2, loose, regular);
+}
+
+.caption1 {
+  @include set-font(caption1, loose, bold);
+}
+
+.caption2 {
+  @include set-font(caption2, loose, regular);
+}
+
+.small1 {
+  @include set-font(small1, loose, bold);
+}
+
+.small2 {
+  @include set-font(small2, loose, regular);
+}
+
+.tiny1 {
+  @include set-font(tiny1, loose, bold);
+}
+
+.tiny2 {
+  @include set-font(tiny2, loose, regular);
+}

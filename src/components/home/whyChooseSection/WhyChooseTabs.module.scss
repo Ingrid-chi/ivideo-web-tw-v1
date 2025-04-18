@@ -1,0 +1,80 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/fonts.scss';
+
+.whyChooseTabs {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.tabsList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  padding: 0 40px;
+
+  @media (max-width: 768px) {
+    padding: 0 24px;
+
+    //觸控
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    touch-action: pan-x;
+
+    /* 分開寫選擇器，避免SCSS/SASS語法問題 */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  @media (max-width: 375px) {
+    padding: 0 20px;
+  }
+}
+
+.tabItem {
+  cursor: pointer;
+  @extend title;
+  color: $BLACK_800;
+  border-bottom: 2px solid $BLACK_100;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $PRIMARY_DEFAULT;
+  }
+
+  &.active {
+    color: $PRIMARY_DEFAULT;
+    border-bottom: 4px solid $PRIMARY_DEFAULT;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    @extend .body1;
+    color: $BLACK_100;
+  }
+}
+
+.tabName {
+  width: 100%;
+  max-width: 300px;
+  padding: 24px 12px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @media (max-width: 1200px) {
+    max-width: 256px;
+  }
+
+  @media (max-width: 768px) {
+    min-width: 256px;
+  }
+
+  @media (max-width: 375px) {
+    min-width: 180px;
+  }
+}

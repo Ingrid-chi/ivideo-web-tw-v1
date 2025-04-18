@@ -1,0 +1,51 @@
+@import '../../styles/colors.scss';
+@import '../../styles/fonts.scss';
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+.socialMedia {
+  width: 30px;
+  height: 30px;
+  object-fit: contain; /* 確保圖像保持比例 */
+  transition: transform 0.2s ease-in-out; /* 加入轉換效果 */
+}
+
+.socialMedia:hover {
+  transform: scale(1.2); /* 圖標 hover 時微微放大 */
+}
+
+.iconPrimary {
+  width: 24px;
+  height: 24px;
+  transition: fill 0.2s ease-in-out;
+
+  path {
+    width: 24px;
+    height: 24px;
+    transition: fill 0.2s ease-in-out;
+  }
+}
+
+.iconPrimary:hover {
+  cursor: pointer;
+  color: $PRIMARY_DEFAULT;
+
+  path {
+    cursor: pointer;
+    fill: currentColor;
+  }
+}
+
+// .crossIcon path {
+//   width: 24px;
+//   height: 24px;
+//   transition: fill 0.1s ease-in-out;
+// }
+
+// .crossIcon:hover path {
+//   cursor: pointer;
+//   fill: $WHITE;
+// }
