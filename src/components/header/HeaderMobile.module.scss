@@ -109,23 +109,24 @@
               transform: rotate(180deg);
             }
 
-            .arrowIcon path {
+            .arrowIcon {
               transition: transform 0.2s ease-in-out;
               transform-origin: center;
+              color: $BLACK_800;
             }
           }
 
           &:hover {
             color: $PRIMARY_DEFAULT;
 
-            .expandIcon .arrowIcon path {
-              fill: $PRIMARY_DEFAULT;
+            .expandIcon .arrowIcon {
+              color: $PRIMARY_DEFAULT;
             }
           }
 
           &.active {
-            .arrowIcon path {
-              fill: $PRIMARY_DEFAULT;
+            .arrowIcon {
+              color: $PRIMARY_DEFAULT;
             }
           }
         }
@@ -183,5 +184,13 @@
         width: 100%;
       }
     }
+  }
+}
+
+.hamburgerIcon {
+  color: $BLACK_800;
+
+  &:hover {
+    color: $PRIMARY_DEFAULT;
   }
 }

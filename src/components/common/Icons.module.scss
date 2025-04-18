@@ -21,22 +21,25 @@
   width: 24px;
   height: 24px;
   transition: fill 0.2s ease-in-out;
+  // color: $BLACK_800;
 
-  path {
-    width: 24px;
-    height: 24px;
-    transition: fill 0.2s ease-in-out;
-  }
+  // path {
+  // width: 24px;
+  // height: 24px;
+  // transition: fill 0.2s ease-in-out;
+  // fill: $BLACK_800;
+  // }
 }
 
 .iconPrimary:hover {
   cursor: pointer;
-  color: $PRIMARY_DEFAULT;
+  // color: $PRIMARY_DEFAULT;
 
-  path {
-    cursor: pointer;
-    fill: currentColor;
-  }
+  // path {
+  // cursor: pointer;
+  // fill: $PRIMARY_DEFAULT;
+  // fill: currentColor;
+  // }
 }
 
 // .crossIcon path {

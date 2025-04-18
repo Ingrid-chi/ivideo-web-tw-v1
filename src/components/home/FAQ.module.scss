@@ -76,9 +76,13 @@
     &:hover {
       border: 1px solid $PRIMARY_DEFAULT;
 
-      .arrow path {
-        fill: $PRIMARY_DEFAULT;
+      .arrow {
+        color: $PRIMARY_DEFAULT;
       }
+
+      // .arrow path {
+      //   fill: $PRIMARY_DEFAULT;
+      // }
     }
   }
 
@@ -104,9 +108,13 @@
   &:hover {
     border: 1px solid $PRIMARY_DEFAULT;
 
-    .arrow path {
-      fill: $PRIMARY_DEFAULT;
+    .arrow {
+      color: $PRIMARY_DEFAULT;
     }
+
+    // .arrow path {
+    //   fill: $PRIMARY_DEFAULT;
+    // }
   }
 
   &.active {

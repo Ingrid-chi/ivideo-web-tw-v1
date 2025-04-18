@@ -76,3 +76,13 @@
     }
   }
 }
+
+.searchIcon,
+.cartIcon,
+.loginIcon {
+  color: $BLACK_800;
+
+  &:hover {
+    color: $PRIMARY_DEFAULT;
+  }
+}

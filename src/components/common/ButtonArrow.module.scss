@@ -17,19 +17,26 @@
 
   .arrowIcon {
     display: block;
+    cursor: pointer;
+    transition: fill 0.1s ease-in-out;
+    color: $BLACK_800;
 
-    path {
-      cursor: pointer;
-      transition: fill 0.1s ease-in-out;
-    }
+    // path {
+    //   cursor: pointer;
+    //   transition: fill 0.1s ease-in-out;
+    // }
   }
 
   &:hover {
     background-color: rgba(255, 255, 255, 1);
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
 
-    .arrowIcon path {
-      fill: $PRIMARY_DEFAULT;
+    // .arrowIcon path {
+    //   fill: $PRIMARY_DEFAULT;
+    // }
+
+    .arrowIcon {
+      color: $PRIMARY_DEFAULT;
     }
   }
 
