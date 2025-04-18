@@ -38,7 +38,7 @@ export const whyChooseData = [
   },
   {
     id: 2,
-    name: 'SIM卡 SIM卡SIM卡SIM卡SIM卡SIM卡SIM卡SIM卡SIM卡SIM卡SIM卡SIM卡SIM卡SIM卡SIM卡SIM卡SIM卡SIM卡SIM卡SIM卡SIM卡SIM卡SIM卡SIM卡SIM卡',
+    name: 'SIM卡',
     isDisabled: false,
     items: [
       {
