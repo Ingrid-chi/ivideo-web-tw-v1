@@ -25,6 +25,8 @@
   }
 
   @media (max-width: 375px) {
+    @include set-font(tiny2, loose, regular);
+    text-align: center;
     padding: 20px;
   }
 }
