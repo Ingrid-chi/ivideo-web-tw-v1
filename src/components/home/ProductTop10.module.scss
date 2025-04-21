@@ -45,7 +45,7 @@
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-x: contain;
-  touch-action: pan-x;
+  touch-action: auto;
 
   /* 分開寫選擇器，避免SCSS/SASS語法問題 */
   .tabList::-webkit-scrollbar {

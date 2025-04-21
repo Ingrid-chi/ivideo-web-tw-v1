@@ -130,4 +130,3 @@ export const whyChooseData = [
     ],
   },
 ];
-console.log('🚀 SIM卡資料載入成功', whyChooseData);
