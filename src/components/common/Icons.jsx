@@ -48,10 +48,10 @@ import PropTypes from 'prop-types';
 // ### 修正 ###
 // 因為原始 svg 檔裡面的 icon(例如 facebook 的 f) 經過 react 轉成的 svg 之後，那個 icon 因為不是向量，是一張完整的圖片，所以轉換會有點問題
 // 改成直接用 img 的方式
-import logoPath from '../../../public/logo_ivideo.svg';
-import linePath from '../../../public/icons_social_media/line.svg';
-import facebookPath from '../../../public/icons_social_media/facebook.svg';
-import instagramPath from '../../../public/icons_social_media/instagram.svg';
+import logoPath from '../../../public/logo_ivideo.png';
+import linePath from '../../../public/icons_social_media/line.png';
+import facebookPath from '../../../public/icons_social_media/facebook.png';
+import instagramPath from '../../../public/icons_social_media/instagram.png';
 
 // import languageIconPath from '../../assets/icons/language.svg';
 // import searchIconPath from '../../assets/icons/search.svg';

@@ -2,7 +2,7 @@
 @import '../../styles/fonts.scss';
 
 .logo {
-  width: 100px;
+  width: 100%;
   height: auto;
 }
 
@@ -21,7 +21,6 @@
   width: 24px;
   height: 24px;
   transition: fill 0.2s ease-in-out;
-  // color: $BLACK_800;
 
   // path {
   // width: 24px;
@@ -31,16 +30,9 @@
   // }
 }
 
-.iconPrimary:hover {
-  cursor: pointer;
-  // color: $PRIMARY_DEFAULT;
+// .iconPrimary:hover {
 
-  // path {
-  // cursor: pointer;
-  // fill: $PRIMARY_DEFAULT;
-  // fill: currentColor;
-  // }
-}
+// }
 
 // .crossIcon path {
 //   width: 24px;
